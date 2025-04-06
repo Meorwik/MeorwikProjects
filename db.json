@@ -1,0 +1,67 @@
+[
+    {
+        "name": "OnlineShop",
+        "description": "online shop market",
+        "media": [
+            {
+                "photo": "qwerty"
+            },
+            {
+                "photo": "qwerty"
+            }
+        ],
+        "id": null
+    },
+    {
+        "name": "MarketBot",
+        "description": "online Bot market",
+        "media": [
+            {
+                "photo": "qwerty"
+            },
+            {
+                "photo": "qwerty"
+            }
+        ],
+        "id": null
+    },
+    {
+        "name": "LLM model",
+        "description": "online LLM model",
+        "media": [
+            {
+                "photo": "qwerty"
+            },
+            {
+                "photo": "qwerty"
+            }
+        ],
+        "id": null
+    },
+    {
+        "name": "TTS lib",
+        "description": "TTS lib",
+        "media": [
+            {
+                "photo": "qwerty"
+            },
+            {
+                "photo": "qwerty"
+            }
+        ],
+        "id": null
+    },
+    {
+        "name": "STT lib",
+        "description": "STT lib",
+        "media": [
+            {
+                "photo": "qwerty"
+            },
+            {
+                "photo": "qwerty"
+            }
+        ],
+        "id": null
+    }
+]
