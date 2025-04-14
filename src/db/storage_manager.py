@@ -1,5 +1,6 @@
 from db.models.project import ProjectDb, ProjectPhotoDb
 from domain.project_manager import ProjectsGateway
+from domain.entities.project import Project
 from typing import List, Dict
 import json
 
@@ -61,7 +62,8 @@ class FSStorageGateway(ProjectsGateway):
 
 
 class DBStorageGateway(ProjectsGateway):
-    def add_projects(self, project: ProjectDb) -> :
+    def add_projects(self, project: ProjectDb) -> None:
+        ...
 
     def get_projects(self) -> List[ProjectDb]:
         ...
