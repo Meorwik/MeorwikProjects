@@ -1,13 +1,11 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pydantic import BaseModel
 from typing import List
 
+
 @dataclass
 class BaseEntity:
-
-    def as_dict(self):
-        return asdict(self)
-
+    ...
 
 class ProjectPhotoCreate(BaseModel):
     photo: str
@@ -28,4 +26,4 @@ class ProjectResponse(ProjectCreate):
     media: List[ProjectPhotoResponse]
 
     class Config:
-        orm_mode = True
+        from_attributes = True

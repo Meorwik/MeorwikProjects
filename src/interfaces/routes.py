@@ -1,22 +1,23 @@
-from domain.entities.project import Project, ProjectPhoto
-from schemas.project import ProjectCreate, ProjectResponse
-from db.storage_manager import FSStorageGateway
+from src.domain.entities.project import Project, ProjectPhoto
+from .schemas.project import ProjectCreate
+from src.domain.project_manager import StdOut, StdIn
+from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, HTTPException
 from typing import List
 
-router = APIRouter(prefix="/projects", tags=["Projects"])
+router = APIRouter()
 
 
-
-
-@router.get("/", response_model=List[ProjectResponse])
-def get_projects():
+@router.get("/")
+@inject
+def get_projects(gateway: FromDishka[StdOut]) -> List[Project]:
     projects = gateway.get_projects()
     return projects
 
 
-@router.get("/{project_id}", response_model=ProjectResponse)
-def get_project(project_id: int):
+@router.get("/{project_id}")
+@inject
+def get_project(project_id: int, gateway: FromDishka[StdOut]) -> Project:
     project = gateway.get_project(project_id)
 
     if not project:
@@ -25,13 +26,13 @@ def get_project(project_id: int):
     return project
 
 
-@router.post("/", response_model=ProjectResponse)
-def create_project(project_create: ProjectCreate):
+@router.post("/")
+@inject
+def create_project(project_create: ProjectCreate, gateway: FromDishka[StdIn]) -> Project:
     domain_project = Project(
-        id=0,
         name=project_create.name,
         description=project_create.description,
         media=[ProjectPhoto(photo=media.photo) for media in project_create.media]
     )
     project: Project = gateway.add_project(domain_project)
-    return ProjectResponse(id=project.id, name=project.name, description=project.description, media=project.media)
+    return project

@@ -1,67 +1,28 @@
 [
     {
-        "name": "OnlineShop",
-        "description": "online shop market",
+        "id": 1,
+        "name": "My Startup Project",
+        "description": "A cool app",
         "media": [
             {
-                "photo": "qwerty"
+                "photo": "https://cdn.example.com/image1.jpg"
             },
             {
-                "photo": "qwerty"
+                "photo": "https://cdn.example.com/image2.jpg"
             }
-        ],
-        "id": null
+        ]
     },
     {
-        "name": "MarketBot",
-        "description": "online Bot market",
+        "id": 2,
+        "name": "My Startup Project version 2",
+        "description": "A cool app",
         "media": [
             {
-                "photo": "qwerty"
+                "photo": "https://cdn.example.com/image1.jpg"
             },
             {
-                "photo": "qwerty"
+                "photo": "https://cdn.example.com/image2.jpg"
             }
-        ],
-        "id": null
-    },
-    {
-        "name": "LLM model",
-        "description": "online LLM model",
-        "media": [
-            {
-                "photo": "qwerty"
-            },
-            {
-                "photo": "qwerty"
-            }
-        ],
-        "id": null
-    },
-    {
-        "name": "TTS lib",
-        "description": "TTS lib",
-        "media": [
-            {
-                "photo": "qwerty"
-            },
-            {
-                "photo": "qwerty"
-            }
-        ],
-        "id": null
-    },
-    {
-        "name": "STT lib",
-        "description": "STT lib",
-        "media": [
-            {
-                "photo": "qwerty"
-            },
-            {
-                "photo": "qwerty"
-            }
-        ],
-        "id": null
+        ]
     }
 ]

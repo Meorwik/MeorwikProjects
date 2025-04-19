@@ -1,12 +1,11 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from typing import List
 
 
 @dataclass
 class BaseEntity:
+    ...
 
-    def as_dict(self):
-        return asdict(self)
 
 @dataclass
 class ProjectPhoto(BaseEntity):
@@ -15,7 +14,7 @@ class ProjectPhoto(BaseEntity):
 
 @dataclass
 class Project(BaseEntity):
-    id: int
     name: str
     description: str
     media: List[ProjectPhoto]
+    id: int = None
