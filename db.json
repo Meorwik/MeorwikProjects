@@ -24,5 +24,15 @@
                 "photo": "https://cdn.example.com/image2.jpg"
             }
         ]
+    },
+    {
+        "name": "string",
+        "description": "string",
+        "media": [
+            {
+                "photo": "string"
+            }
+        ],
+        "id": 3
     }
 ]

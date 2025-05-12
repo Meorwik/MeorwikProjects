@@ -1,9 +1,12 @@
-from src.domain.entities.project import Project, ProjectPhoto
-from .schemas.project import ProjectCreate
-from src.domain.project_manager import StdOut, StdIn
+from typing import List
+
 from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, HTTPException
-from typing import List
+
+from src.domain.entities.project import Project, ProjectPhoto
+from src.domain.project_manager import StdIn, StdOut
+
+from .schemas.project import ProjectCreate
 
 router = APIRouter()
 

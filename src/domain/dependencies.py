@@ -1,6 +1,8 @@
-from .project_manager import StdOut, StdIn, ProjectGateway
-from dishka import Provider, Scope, provide, AnyOf
+from dishka import AnyOf, Provider, Scope, provide
+
 from src.db.storage_manager import FSStorageGateway
+
+from .project_manager import ProjectGateway, StdIn, StdOut
 
 
 class ProjectGateProvider(Provider):

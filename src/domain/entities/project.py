@@ -17,4 +17,4 @@ class Project(BaseEntity):
     name: str
     description: str
     media: List[ProjectPhoto]
-    id: int = None
+    id: int | None = None

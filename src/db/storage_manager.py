@@ -1,23 +1,27 @@
-from src.domain.project_manager import ProjectGateway
-from src.domain.entities.project import Project, ProjectPhoto
-from dataclasses import asdict
-from typing import List, Dict
 import json
+from dataclasses import asdict
+from typing import Dict, List
 
+from src.domain.entities.project import Project, ProjectPhoto
+from src.domain.project_manager import ProjectGateway
+
+storage_data_type = Dict[str, str | int] # I will rename later
+rename_later = List[storage_data_type] # Nikita if ur reading this, could you pls explain how should I name such context data types
 
 class FSStorageGateway(ProjectGateway):
 
-    def __init__(self):
-        self._memory: List[Dict] = self._load_db()
+    def __init__(self) -> None:
+        self._memory: rename_later = self._load_db()
 
-    def _load_db(self):
+    def _load_db(self) -> rename_later:
         with open("db.json", "r") as db:
-            return json.load(db)
+            result: rename_later = json.load(db)
+        return result
 
-    def _fetch_bd(self):
+    def _fetch_bd(self) -> None:
         self._memory = self._load_db()
 
-    def _serialize_media(self, data: List[Dict]) -> List[ProjectPhoto]:
+    def _serialize_media(self, data: rename_later) -> List[ProjectPhoto]:
         media: List[ProjectPhoto] = [
             ProjectPhoto(
                 photo=photo["photo"],
@@ -25,7 +29,7 @@ class FSStorageGateway(ProjectGateway):
         ]
         return media
 
-    def _serialize_project(self, project: Dict) -> Project:
+    def _serialize_project(self, project: storage_data_type) -> Project:
         return Project(
             id=project["id"],
             name=project["name"],
