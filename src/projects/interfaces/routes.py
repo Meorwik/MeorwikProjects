@@ -3,8 +3,8 @@ from typing import List
 from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, HTTPException
 
-from src.domain.entities.project import Project, ProjectPhoto
-from src.domain.project_manager import StdIn, StdOut
+from projects.domain.entities.project import Project, ProjectPhoto
+from projects.domain.project_manager import StdIn, StdOut
 
 from .schemas.project import ProjectCreate
 

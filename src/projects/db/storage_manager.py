@@ -2,8 +2,8 @@ import json
 from dataclasses import asdict
 from typing import Dict, List
 
-from src.domain.entities.project import Project, ProjectPhoto
-from src.domain.project_manager import ProjectGateway
+from projects.domain.entities.project import Project, ProjectPhoto
+from projects.domain import ProjectGateway
 
 storage_data_type = Dict[str, str | int] # I will rename later
 rename_later = List[storage_data_type] # Nikita if ur reading this, could you pls explain how should I name such context data types

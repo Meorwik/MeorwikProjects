@@ -1,6 +1,6 @@
 from typing import List, Protocol
 
-from src.domain.entities.project import Project
+from projects.domain.entities.project import Project
 
 
 class StdIn(Protocol):
