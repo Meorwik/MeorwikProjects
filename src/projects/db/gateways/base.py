@@ -10,9 +10,9 @@ class FSStorageGateway(FSGateway):  # type: ignore
     def __init__(self) -> None:
         self._memory: List[Dict[str, str | int]] = self._load_db()
 
-    def _load_db(self) -> List[Dict[str, str | int]] :
+    def _load_db(self) -> List[Dict[str, str | int]]:
         with open("db.json", "r") as db:
-            result: List[Dict[str, str | int]]  = load(db)[self._KEY]
+            result: List[Dict[str, str | int]] = load(db)[self._KEY]
         return result
 
     def _fetch_db(self) -> None:

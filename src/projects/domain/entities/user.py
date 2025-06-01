@@ -10,5 +10,3 @@ class User:
     password: str
     role: Roles = Roles.user.value
     id: int | None = None
-
-

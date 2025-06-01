@@ -10,7 +10,7 @@ dependencies = [
     "dishka",
     "python-jose[cryptography]",
     "passlib[bcrypt]",
-    "pydantic[email]"
+    "pydantic[email]",
 ]
 requires-python = ">=3.10"
 
@@ -20,7 +20,8 @@ dev = [
     "mypy",
     "sqlalchemy-stubs",
     "pytest",
-    "pre-commit"
+    "pre-commit",
+    "httpx>=0.28.1",
 ]
 
 [tool.ruff]
