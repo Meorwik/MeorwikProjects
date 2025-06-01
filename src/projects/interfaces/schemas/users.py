@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 
-from projects.interfaces.schemas.enums.roles import Roles
+from projects.domain.entities.enums import Roles
 
 
 class UserSchema(BaseModel):

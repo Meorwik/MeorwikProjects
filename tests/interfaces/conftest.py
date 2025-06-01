@@ -1,13 +1,12 @@
-from typing import Generator
+from collections.abc import Iterator
 
 import pytest
 from fastapi.testclient import TestClient
-from pytest import fixture
 
 from projects.main import app
 
 
 @pytest.fixture(scope="session")
-def client() -> Generator[TestClient]:
+def client() -> Iterator[TestClient]:
     with TestClient(app) as client:
         yield client

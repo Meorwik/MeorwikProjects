@@ -2,7 +2,6 @@ from typing import List
 
 from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, HTTPException
-from pydantic import EmailStr
 
 from projects.domain import UsersGateway
 from projects.domain.entities import User
