@@ -5,7 +5,7 @@ description = "backend project"
 authors = [{ name = "Илья" }]
 dependencies = [
     "fastapi==0.115.12",
-    "sqlalchemy==2.0.13",
+    "sqlalchemy==2.0.41",
     "uvicorn[standard]==0.34.3",
     "dishka==1.6.0",
     "python-jose[cryptography]==3.5.0",
