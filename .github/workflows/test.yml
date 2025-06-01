@@ -52,6 +52,7 @@ jobs:
 
     needs:
       - mypy
+      - ruff
 
     runs-on: ubuntu-latest
 
