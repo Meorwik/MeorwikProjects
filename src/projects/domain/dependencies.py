@@ -7,7 +7,7 @@ from projects.domain import ProjectGateway, UsersGateway
 class ProjectGateProvider(Provider):
     get_project_gate = provide(
         FSProjectsGateway,
-        provides=AnyOf[ProjectGateway],
+        provides=AnyOf[ProjectGateway, FSProjectsGateway],
         scope=Scope.REQUEST,
     )
 
@@ -15,6 +15,6 @@ class ProjectGateProvider(Provider):
 class UserGateProvider(Provider):
     get_user_gate = provide(
         FSUserGateway,
-        provides=AnyOf[UsersGateway],
+        provides=AnyOf[UsersGateway, FSUserGateway],
         scope=Scope.REQUEST,
     )
