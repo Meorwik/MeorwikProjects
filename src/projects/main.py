@@ -3,6 +3,7 @@ from typing import Final
 from dishka import make_async_container
 from dishka.integrations.fastapi import setup_dishka
 from fastapi import FastAPI
+
 from projects.domain.dependencies import ProjectGateProvider, UserGateProvider
 from projects.interfaces.api import api_router
 

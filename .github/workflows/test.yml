@@ -46,6 +46,27 @@ jobs:
       - name: Test
         run: mypy src
 
+  pytest:
+    runs-on: ubuntu-latest
+
+    needs:
+      - ruff
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "latest"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: uv pip install --system .[dev]
+      - name: Test
+        run: pytest tests -vv
+
   # https://github.com/marketplace/actions/alls-green#why
   check:  # This job does nothing and is only used for the branch protection
     if: always()
@@ -53,6 +74,7 @@ jobs:
     needs:
       - mypy
       - ruff
+      - pytest
 
     runs-on: ubuntu-latest
 
