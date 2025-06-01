@@ -1,30 +1,21 @@
-from dataclasses import dataclass
 from typing import List
 
 from pydantic import BaseModel
 
 
-@dataclass
-class BaseEntity:
-    ...
-
-class ProjectPhotoCreate(BaseModel):
-    photo: str
-
-
-class ProjectPhotoResponse(BaseEntity):
+class ProjectPhoto(BaseModel):
     photo: str
 
 
 class ProjectCreate(BaseModel):
     name: str
     description: str
-    media: List[ProjectPhotoCreate]
+    media: List[ProjectPhoto]
 
 
-class ProjectResponse(ProjectCreate):
+class ProjectResponse(BaseModel):
     id: int
-    media: List[ProjectPhotoResponse]
+    media: List[ProjectPhoto]
 
     class Config:
         from_attributes = True

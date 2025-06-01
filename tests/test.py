@@ -1,4 +1,4 @@
-from projects.domain import ProjectGateway
+from projects.domain.protocols.projects_protocol import ProjectGateway
 
 
 def test_get_projects_returns_expected_data(gateway: ProjectGateway) -> None:
@@ -6,6 +6,8 @@ def test_get_projects_returns_expected_data(gateway: ProjectGateway) -> None:
 
     assert isinstance(result, list)
     assert len(result) > 0
+
+
 
 
 

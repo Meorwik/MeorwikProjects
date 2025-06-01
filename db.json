@@ -1,38 +1,105 @@
-[
-    {
-        "id": 1,
-        "name": "My Startup Project",
-        "description": "A cool app",
-        "media": [
-            {
-                "photo": "https://cdn.example.com/image1.jpg"
-            },
-            {
-                "photo": "https://cdn.example.com/image2.jpg"
-            }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "My Startup Project version 2",
-        "description": "A cool app",
-        "media": [
-            {
-                "photo": "https://cdn.example.com/image1.jpg"
-            },
-            {
-                "photo": "https://cdn.example.com/image2.jpg"
-            }
-        ]
-    },
-    {
-        "name": "string",
-        "description": "string",
-        "media": [
-            {
-                "photo": "string"
-            }
-        ],
-        "id": 3
-    }
-]
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "My Startup Project",
+            "description": "A cool app",
+            "media": [
+                {
+                    "photo": "https://cdn.example.com/image1.jpg"
+                },
+                {
+                    "photo": "https://cdn.example.com/image2.jpg"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "My Startup Project version 2",
+            "description": "A cool app",
+            "media": [
+                {
+                    "photo": "https://cdn.example.com/image1.jpg"
+                },
+                {
+                    "photo": "https://cdn.example.com/image2.jpg"
+                }
+            ]
+        },
+        {
+            "name": "string",
+            "description": "string",
+            "media": [
+                {
+                    "photo": "string"
+                }
+            ],
+            "id": 3
+        }
+    ],
+    "users": [
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 1,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 3,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 4,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 5,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 6,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "string",
+            "password": "string",
+            "id": 7,
+            "role": "user"
+        },
+        {
+            "name": "string",
+            "email": "user@example.com",
+            "password": "string",
+            "role": "user",
+            "id": 8
+        },
+        {
+            "name": "string",
+            "email": "user@example.com",
+            "password": "string",
+            "role": "user",
+            "id": 9
+        },
+        {
+            "name": "string",
+            "email": "user@example.com",
+            "password": "string",
+            "role": "user",
+            "id": 10
+        }
+    ]
+}

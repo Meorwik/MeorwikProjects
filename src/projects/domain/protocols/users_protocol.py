@@ -1,0 +1,15 @@
+from typing import List, Protocol
+
+from projects.domain.entities.user import User
+
+
+class UsersGateway(Protocol):
+    def get_users(self) -> List[User]: ...
+
+    def get_user(self, user_id: int) -> User: ...
+
+    def add_user(self, user: User) -> User: ...
+
+    def remove_user(self, user_id: int) -> bool: ...
+
+

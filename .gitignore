@@ -1,3 +1,5 @@
 src/projects.egg-info
 db.json
 .idea/
+build/
+__pycache__

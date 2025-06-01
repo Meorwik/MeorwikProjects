@@ -3,17 +3,12 @@ from typing import List
 
 
 @dataclass
-class BaseEntity:
-    ...
-
-
-@dataclass
-class ProjectPhoto(BaseEntity):
+class ProjectPhoto:
     photo: str
 
 
 @dataclass
-class Project(BaseEntity):
+class Project:
     name: str
     description: str
     media: List[ProjectPhoto]
