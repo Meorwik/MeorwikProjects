@@ -30,11 +30,13 @@ def get_project(project_id: int, gateway: FromDishka[ProjectGateway]) -> Project
 
 @projects_router.post("/")
 @inject
-def create_project(project_create: ProjectCreate, gateway: FromDishka[ProjectGateway]) -> Project:
+def create_project(
+    project_create: ProjectCreate, gateway: FromDishka[ProjectGateway]
+) -> Project:
     domain_project = Project(
         name=project_create.name,
         description=project_create.description,
-        media=[ProjectPhoto(photo=media.photo) for media in project_create.media]
+        media=[ProjectPhoto(photo=media.photo) for media in project_create.media],
     )
     project: Project = gateway.add_project(domain_project)
     return project

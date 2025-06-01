@@ -4,16 +4,18 @@ from dishka.integrations.fastapi import FromDishka, inject
 from fastapi import APIRouter, HTTPException
 from pydantic import EmailStr
 
-from projects.interfaces.schemas.users import UserSchema, UserSchemaResponse
-from projects.domain.entities import User
 from projects.domain import UsersGateway
+from projects.domain.entities import User
+from projects.interfaces.schemas.users import UserSchema, UserSchemaResponse
 
 users_router = APIRouter()
 
 
 @users_router.post("/")
 @inject
-def create_user(user_create: UserSchema, gateway: FromDishka[UsersGateway]) -> UserSchemaResponse:
+def create_user(
+    user_create: UserSchema, gateway: FromDishka[UsersGateway]
+) -> UserSchemaResponse:
     new_user: User = User(
         name=user_create.name,
         email=str(user_create.email),
@@ -46,6 +48,7 @@ def get_user(user_id: int, gateway: FromDishka[UsersGateway]) -> User:
     except ValueError:
         raise HTTPException(status_code=404, detail="User not found")
 
+
 @users_router.delete("/{user_id}")
 @inject
 def delete_user(user_id: int, gateway: FromDishka[UsersGateway]) -> bool:
@@ -53,6 +56,3 @@ def delete_user(user_id: int, gateway: FromDishka[UsersGateway]) -> bool:
     if not result:
         raise HTTPException(status_code=500, detail="Failed to remove user")
     return result
-
-
-

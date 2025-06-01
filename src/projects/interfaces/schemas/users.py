@@ -9,6 +9,7 @@ class UserSchema(BaseModel):
     password: str
     role: Roles = Roles.user
 
+
 class UserSchemaResponse(UserSchema):
     id: int
     email: str
